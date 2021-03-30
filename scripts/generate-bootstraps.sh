@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Creating bootstrap for all archs"
-: '
+
 echo "Building proot..."
 cd ../external/proot/
 
@@ -9,7 +9,7 @@ cd ../external/proot/
 echo "Building minitar..."
 cd ../minitar
 ./build.sh
-'
+
 mkdir -p  build
 cd build
 rm -rf *
