@@ -8,7 +8,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Install NDK
         run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147" --sdk_root=${ANDROID_SDK_ROOT}
-
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
       - name: Build the bootstrap
         run: |
           ./generate-bootstraps.sh
