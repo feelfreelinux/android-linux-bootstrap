@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Creating bootstrap for all archs"
-
+SCRIPTS_PATH=$PWD
 echo "Building proot..."
 cd ../external/proot/
 
@@ -10,6 +10,7 @@ echo "Building minitar..."
 cd ../minitar
 ./build.sh
 
+cd $SCRIPTS_PATH
 mkdir -p  build
 cd build
 rm -rf *
