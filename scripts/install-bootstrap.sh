@@ -3,7 +3,7 @@
 # unpack alpine bootstrap
 mkdir bootstrap
 cd bootstrap
-cat ../rootfs.tar.xz | ../minitar
+cat ../rootfs.tar.xz | ../root/bin/minitar
 cd ..
 
 # include resolv.conf
