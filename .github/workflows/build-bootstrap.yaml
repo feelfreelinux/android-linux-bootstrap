@@ -1,0 +1,20 @@
+name: Build app
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Install NDK
+        run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147" --sdk_root=${ANDROID_SDK_ROOT}
+
+      - name: Build the bootstrap
+        run: |
+          ./generate-bootstraps.sh
+        working-directory: ./scripts
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bootstrap
+          path: ./scripts/build/bootstrap-aarch64.zip
