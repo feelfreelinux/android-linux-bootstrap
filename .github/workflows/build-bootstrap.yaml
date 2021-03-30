@@ -1,7 +1,7 @@
-name: Build app
+name: Build bootstrap
 on:
   release:
-    types: [published]
+    types: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
