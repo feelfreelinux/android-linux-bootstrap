@@ -6,6 +6,9 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '2.x'
       - name: Install NDK
         run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147" --sdk_root=${ANDROID_SDK_ROOT}
       - name: Checkout submodules
