@@ -19,7 +19,7 @@ jobs:
         run: |
           mkdir -p ~/Android
           ln -s ${ANDROID_HOME} ~/Android/Sdk 
-          ./generate-bootstraps.sh
+          sudo ./generate-bootstraps.sh
         working-directory: ./scripts
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
