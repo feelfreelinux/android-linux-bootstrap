@@ -17,6 +17,8 @@ jobs:
         run: echo ${ANDROID_HOME}
       - name: Build the bootstrap
         run: |
+          mkdir -p ~/Android
+          ln -s ${ANDROID_HOME} ~/Android/Sdk 
           ./generate-bootstraps.sh
         working-directory: ./scripts
       - name: Upload artifacts
