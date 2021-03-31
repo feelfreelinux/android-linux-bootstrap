@@ -32,4 +32,5 @@ unset LD_LIBRARY_PATH
 export PATH
 export USER
 export HOME
-./root/bin/proot -r bootstrap $OP -b /dev -b /proc -b /sys -b /system -b /vendor -b /storage $EXTRA_BIND --link2symlink -p -L -w $HOME $2
+shift
+./root/bin/proot -r bootstrap $OP -b /dev -b /proc -b /sys -b /system -b /vendor -b /storage $EXTRA_BIND --link2symlink -p -L -w $HOME "$@"
