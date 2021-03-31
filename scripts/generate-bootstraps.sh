@@ -52,6 +52,7 @@ build_bootstrap () {
 	curl -o rootfs.tar.xz -L "https://us.images.linuxcontainers.org/images/alpine/3.13/$1/default/20210330_13:00/rootfs.tar.xz"
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
+	cp ../../add-user.sh .
 	zip -r bootstrap-$PROOT_ARCH.zip root root-pre5 rootfs.tar.xz run-bootstrap.sh install-bootstrap.sh add-user.sh
 	mv bootstrap-$PROOT_ARCH.zip ../
 	echo "Packed bootstrap $1"
