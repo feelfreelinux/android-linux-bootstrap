@@ -23,7 +23,7 @@ build_bootstrap () {
 	echo "Packing bootstrap for arch $1"
 	
 	case $1 in
-	arm64)
+	aarch64)
 		PROOT_ARCH="aarch64"
 		ANDROID_ARCH="arm64-v8a"
 		MUSL_ARCH="aarch64-linux-musl"
@@ -33,12 +33,12 @@ build_bootstrap () {
 		ANDROID_ARCH="armeabi-v7a"
 		MUSL_ARCH="arm-linux-musleabihf"
 		;;
-	amd64)
+	x86_64)
 		PROOT_ARCH="x86_64"
 		ANDROID_ARCH="x86_64"
 		MUSL_ARCH="x86_64-linux-musl"
 		;;
-	i386)
+	x86)
 		PROOT_ARCH="i686"
 		ANDROID_ARCH="x86"
 		MUSL_ARCH="i686-linux-musl"
