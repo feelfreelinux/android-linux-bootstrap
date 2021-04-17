@@ -67,7 +67,7 @@ build_bootstrap () {
 	cd ..
 }
 
-build_bootstrap arm64
+build_bootstrap aarch64
 build_bootstrap armhf
-build_bootstrap amd64
-build_bootstrap i386
+build_bootstrap x86_64
+build_bootstrap x86
