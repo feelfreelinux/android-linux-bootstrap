@@ -28,8 +28,9 @@ fi
 
 
 unset TMPDIR
+unset LD_LIBRARY_PATH
 export PATH
 export USER
 export HOME
 shift
-./root/bin/proot -r bootstrap $OP -b /dev -b /proc -b /sys -b /system -b /vendor -b /storage $EXTRA_BIND --kill-on-exit --link2symlink -p -L -w $HOME "$@"
+./root/bin/proot -r bootstrap $OP -b /dev -b /proc -b /sys -b /system -b /vendor -b /storage $EXTRA_BIND --link2symlink -p -L -w $HOME "$@"
