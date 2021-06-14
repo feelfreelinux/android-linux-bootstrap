@@ -56,7 +56,7 @@ build_bootstrap () {
 		cp root/bin/minitar root-pre5/bin/minitar
 	fi
 	
-	curl -o rootfs.tar.xz -L "https://dl-cdn.alpinelinux.org/alpine/v3.13/releases/$1/alpine-minirootfs-3.13.5-$1.tar.gz"
+	curl -o rootfs.tar.xz -L "https://dl-cdn.alpinelinux.org/alpine/v3.4/releases/$1/alpine-minirootfs-3.13.5-$1.tar.gz"
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
 	cp ../../add-user.sh .
