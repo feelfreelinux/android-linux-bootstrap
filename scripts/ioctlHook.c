@@ -60,3 +60,8 @@ int ioctl(int fd, int request, ...)
     //DPRINTF ("HOOK: ioctl (fd=%d, request=%p, argp=%p [%02X])\n", fd, request, argp);
     return funcIoctl(fd, request, argp);
 }
+
+int flock(int fd, int operation) {
+	// DPRINTF ("HOOK: flock (fd=%d, operation=%p)\n", fd, operation);
+	return 0;
+}
