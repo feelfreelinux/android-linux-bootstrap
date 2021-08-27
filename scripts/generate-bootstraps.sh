@@ -60,6 +60,7 @@ build_bootstrap () {
 	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v3.14/releases/$1/alpine-minirootfs-3.14.0-$1.tar.gz  "
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
+    cp ../../fake_proc_stat .
 	cp ../../add-user.sh .
 	cp ../build-ioctl/ioctlHook-${MUSL_ARCH}.so ioctlHook.so
 	zip -r bootstrap-$PROOT_ARCH.zip root ioctlHook.so root-pre5 fake_proc_stat rootfs.tar.xz run-bootstrap.sh install-bootstrap.sh add-user.sh
