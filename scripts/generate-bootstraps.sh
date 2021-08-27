@@ -62,7 +62,7 @@ build_bootstrap () {
 	cp ../../install-bootstrap.sh .
 	cp ../../add-user.sh .
 	cp ../build-ioctl/ioctlHook-${MUSL_ARCH}.so ioctlHook.so
-	zip -r bootstrap-$PROOT_ARCH.zip root ioctlHook.so root-pre5 rootfs.tar.xz run-bootstrap.sh install-bootstrap.sh add-user.sh
+	zip -r bootstrap-$PROOT_ARCH.zip root ioctlHook.so root-pre5 fake_proc_stat rootfs.tar.xz run-bootstrap.sh install-bootstrap.sh add-user.sh
 	mv bootstrap-$PROOT_ARCH.zip ../
 	echo "Packed bootstrap $1"
 	cd ..
