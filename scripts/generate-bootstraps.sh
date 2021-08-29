@@ -57,7 +57,7 @@ build_bootstrap () {
 	fi
 
 
-	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v3.14/releases/$1/alpine-minirootfs-3.14.0-$1.tar.gz  "
+	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v3.14/releases/$1/alpine-minirootfs-3.14.2-$1.tar.gz  "
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
 	cp ../../fake_proc_stat .
