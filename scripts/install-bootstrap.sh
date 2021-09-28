@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
-chmod -R 777 .
-chmod -R +rx .
+chmod -R 777 ../
+chmod -R +rx ../
 # unpack alpine bootstrap
 mkdir bootstrap
 cd bootstrap
