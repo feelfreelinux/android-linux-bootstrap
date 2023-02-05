@@ -9,6 +9,9 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <unistd.h>
+
+#
 
 int g_obvio=0;
 #define DPRINTF(format, args...)	if (!g_obvio) { g_obvio=1; fprintf(stderr, format, ## args); g_obvio=0; }

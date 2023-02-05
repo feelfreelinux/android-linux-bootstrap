@@ -1,6 +1,10 @@
 #!/bin/bash
+set -e
+
 echo "Creating bootstrap for all archs"
-SCRIPTS_PATH=$PWD
+# get the current path of the script
+SCRIPTS_PATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+cd "$SCRIPTS_PATH"
 echo "Building proot..."
 cd ../external/proot/
 
@@ -57,7 +61,9 @@ build_bootstrap () {
 	fi
 
 
-	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v3.14/releases/$1/alpine-minirootfs-3.14.2-$1.tar.gz  "
+	echo "Downloading Alpine $ALPINE_VER"
+	ALPINE_VER="3.17"
+	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VER/releases/$1/alpine-minirootfs-$ALPINE_VER-$1.tar.gz"
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
 	cp ../../fake_proc_stat .
