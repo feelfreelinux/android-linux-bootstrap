@@ -61,9 +61,10 @@ build_bootstrap () {
 	fi
 
 
-	echo "Downloading Alpine $ALPINE_VER"
-	ALPINE_VER="3.17"
-	curl -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_VER/releases/$1/alpine-minirootfs-$ALPINE_VER-$1.tar.gz"
+	ALPINE_RELEASE="3.17"
+	ALPINE_VER="$ALPINE_RELEASE.1"
+	echo "Downloading Alpine $ALPINE_RELEASE ($ALPINE_VER)"
+	curl --fail -o rootfs.tar.xz -L "http://dl-cdn.alpinelinux.org/alpine/v$ALPINE_RELEASE/releases/$1/alpine-minirootfs-$ALPINE_VER-$1.tar.gz"
 	cp ../../run-bootstrap.sh .
 	cp ../../install-bootstrap.sh .
 	cp ../../fake_proc_stat .
