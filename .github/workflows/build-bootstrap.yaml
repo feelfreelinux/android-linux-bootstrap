@@ -7,14 +7,14 @@ jobs:
       - name: Fix permissions
         run: sudo chown -R $USER:$USER /home/runner/work/android-linux-bootstrap
       - name: Checkout the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          submodules: true
       - uses: actions/setup-python@v2
         with:
           python-version: '2.x'
       - name: Install NDK
         run: echo "y" | sudo ${ANDROID_HOME}/tools/bin/sdkmanager --install "ndk;21.3.6528147" --sdk_root=${ANDROID_SDK_ROOT}
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
       - name: Get android home
         run: echo ${ANDROID_HOME}
       - name: Build the bootstrap
